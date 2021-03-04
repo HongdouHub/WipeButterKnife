@@ -5,7 +5,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.command.WriteCommandAction;
+import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -25,6 +27,13 @@ public class WipeButterKnifeAction extends AnAction {
         if (psiFile == null || editor == null) {
             event.getPresentation().setEnabled(false);
             return null;
+        }
+
+        // 将虚拟文件同步到插件中的物理文件
+        FileDocumentManager fileDocumentManager = FileDocumentManager.getInstance();
+        Document document = fileDocumentManager.getDocument(psiFile.getVirtualFile());
+        if (document != null) {
+            fileDocumentManager.saveDocument(document);
         }
 
         int offset = editor.getCaretModel().getOffset();
