@@ -17,21 +17,6 @@ public interface IBindView {
      */
     String getSuperFindViewsMethod();
 
-    /**
-     * findViews
-     */
-    String getExtraFindViewsMethodName();
-
-    /**
-     * protected void findViews()
-     */
-    String getExtraFindViewsMethodDescribe();
-
-    /**
-     * findViews(view)
-     */
-    String getExtraFindViewsMethod();
-
     String[] getMethodParameter();
 
     String getAssembleFormat();

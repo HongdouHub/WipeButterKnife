@@ -1,4 +1,4 @@
-package com.chivas.wipe.debug;
+package com.chivas.wipe.utils;
 
 import com.intellij.openapi.ui.Messages;
 

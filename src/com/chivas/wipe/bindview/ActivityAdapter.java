@@ -23,21 +23,6 @@ public class ActivityAdapter implements IBindView {
     }
 
     @Override
-    public String getExtraFindViewsMethodName() {
-        return "findViews";
-    }
-
-    @Override
-    public String getExtraFindViewsMethodDescribe() {
-        return "protected void findViews()";
-    }
-
-    @Override
-    public String getExtraFindViewsMethod() {
-        return "super.findViews()";
-    }
-
-    @Override
     public String getAssembleFormat() {
         return "%s = (%s) findViewById(%s);";
     }

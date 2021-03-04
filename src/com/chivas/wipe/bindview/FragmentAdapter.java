@@ -23,21 +23,6 @@ public class FragmentAdapter implements IBindView {
     }
 
     @Override
-    public String getExtraFindViewsMethodName() {
-        return "findViews";
-    }
-
-    @Override
-    public String getExtraFindViewsMethodDescribe() {
-        return "protected void findViews(android.view.View view)";
-    }
-
-    @Override
-    public String getExtraFindViewsMethod() {
-        return "super.findViews(view)";
-    }
-
-    @Override
     public String getAssembleFormat() {
         return "%s = (%s) view.findViewById(%s);";
     }
